@@ -4,15 +4,15 @@ function getRandomFirstCharacter(){
     
     if(randomizeCharacter === 0){
         
-        return characters[0].type;
+        return characters[0];
         
     }else if(randomizeCharacter === 1){
         
-        return characters[1].type;
+        return characters[1];
         
     }else{
         
-        return characters[2].type;
+        return characters[2];
     }
 }
 
@@ -22,15 +22,15 @@ function getRandomSecondCharacter(){
     
     if(randomizeCharacter === 0){
         
-        return characters[0].type;
+        return characters[0];
         
     }else if(randomizeCharacter === 1){
         
-        return characters[1].type;
+        return characters[1];
         
     }else{
         
-        return characters[2].type;
+        return characters[2];
     }
 }
 
@@ -53,10 +53,22 @@ function getRandomWeapon(weapons){
     }
 }
 
+function firstCharGetWeapon(){
+    
+    return `${getRandomFirstCharacter().type}, he got a ${getRandomWeapon(weapons)}`;
+    
+}
+
+function secondCharGetWeapon(){
+    
+    return `${getRandomFirstCharacter().type}, he got a ${getRandomWeapon(weapons)}`;
+    
+}
+
 let characters = [
     
         {
-            type : "guerrier",
+            type : "warrior",
             health: 15,
             strength : 10,
             agility : 5,
@@ -86,6 +98,5 @@ let characters = [
     
 let weapons = ["sword","bow","stick"];
 
-alert(getRandomFirstCharacter());
-
-alert(getRandomSecondCharacter());
+alert(`First character is a ${firstCharGetWeapon()}`);
+alert(`Second character is a ${secondCharGetWeapon()}`);
